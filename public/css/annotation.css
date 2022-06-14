@@ -1,0 +1,97 @@
+#annotation-controls {
+    background: #dfe;
+    padding: 1rem 0;
+}
+
+.document-title {
+    font-size: 1.5rem;
+}
+
+.table-condensed {
+    font-size: 1rem;
+    width: 100%;
+}
+
+/* Messages */
+.error-msg {
+    color: red;
+    margin-bottom: 0;
+}
+
+.info-msg {
+    color: blue;
+    margin-bottom: 0;
+}
+
+.success-msg {
+    color: green;
+    margin-bottom: 0;
+}
+
+.warning-msg {
+    color: orange;
+    margin-bottom: 0;
+}
+
+/* Markables */
+.markable.marked {
+    background: #0f0 !important;
+}
+
+.markable.annotated {
+    font-weight: bold;
+}
+
+.markable.annotated.manual {
+    color: blue;
+}
+
+.markable.annotated.system {
+    color: red;
+}
+
+.markable.coref {
+    color: #bb8fce;
+}
+
+.markable.coref-marked {
+    font-weight: bold;
+}
+
+.markable.dependency {
+    background: #bb8fce;
+    font-weight: bold;
+}
+
+.structured-data.marked {
+    background: #bb8fce !important;
+}
+
+.structured-data.coref-marked {
+    background: #bb8fce !important;
+}
+
+/* Info panels */
+.info-panel {
+    margin-bottom: 10px;
+    background: #ebf5fb;
+    padding: 5px;
+}
+
+select {
+    width: 100%;
+}
+
+input[type="text"] {
+    line-height: 9px;
+    font-size: 9px;
+}
+
+textarea {
+    width: calc(100% - 10px);
+}
+
+.panel-body {
+    max-height: 50vh;
+    overflow-y: scroll;
+}

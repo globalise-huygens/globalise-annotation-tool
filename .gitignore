@@ -1,0 +1,9 @@
+data/DynamicLexicon.json
+data/Notes.json
+data/Suggestions.json
+data/lexical_data
+data/structured
+data/structured raw
+data/unstructured
+data/allowed.json
+node_modules

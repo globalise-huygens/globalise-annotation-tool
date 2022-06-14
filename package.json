@@ -1,0 +1,38 @@
+{
+  "name": "frame-annotation-tool",
+  "version": "1.0.0",
+  "description": "Annotation tool in JavaScript and Node.js for annotation of frames in Dutch documents. Developed within the [Dutch Framenet](http://dutchframenet.nl) project.",
+  "main": "tool.js",
+  "scripts": {
+    "test": "mocha tests/backend.js",
+    "start": "node tool.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cltl/frame-annotation-tool.git"
+  },
+  "author": "Sam Titarsolej",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cltl/frame-annotation-tool/issues"
+  },
+  "homepage": "https://github.com/cltl/frame-annotation-tool#readme",
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "fast-xml-parser": "^3.19.0",
+    "morgan": "^1.10.0",
+    "node-libxml": "^4.1.2",
+    "nodemon": "^2.0.15",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "underscore": "^1.13.1"
+  },
+  "devDependencies": {
+    "mocha": "^8.2.1"
+  }
+}
