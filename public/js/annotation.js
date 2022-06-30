@@ -1051,7 +1051,12 @@ function renderDocument(doc_data, annotations) {
     // Extract necessary data
     var doc_id = doc_data['name'];
     var title = doc_id.split('/')[1];
-    var source = doc_data['source'];
+    // var source = doc_data['source'];
+
+    var file_name = doc_data["name"].replace("nl/", "")
+    var inv_number = file_name.match(/(\d{4})/)[0];
+
+    var source = "https://www.nationaalarchief.nl/onderzoeken/archief/1.04.02/invnr/" + inv_number + "/file/" + file_name
 
     // Render title
     var body_tokens = doc_data['body'];
@@ -1060,7 +1065,7 @@ function renderDocument(doc_data, annotations) {
 
     var result = '<div class="panel panel-default" id="' + doc_id + '">';
     result += '<div class="panel-heading"><h4 class="document-title">' + title;
-    result += ' (<a href="' + source + '">source</a>)';
+    result += ' (<a target="_blank" href="' + source + '">source</a>)';
     result += '</h4></div>';
 
     // Render body
