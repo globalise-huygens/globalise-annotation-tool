@@ -2,7 +2,7 @@ import json
 
 group_data, entity_data = None, None
 
-with open("structured raw/grouped_files.json", "r") as f:
+with open("structured raw/grouped_events.json", "r") as f:
     group_data = json.load(f)
 
 with open("structured raw/entities.json", "r") as f:
@@ -22,11 +22,14 @@ for inc_type in group_data:
     for inc in group_data[inc_type]:
         labels[inc] = f"Jaar {inc}"
         proj2inc["pilot"].append(inc)
-        inc2lang2doc[inc] = {"nl": []}
-        inc2lang2doc[inc]["nl"] = group_data[inc_type][inc]
+        if inc not in inc2lang2doc:
+            inc2lang2doc[inc] = {"nl": []}
 
-        inc2str[inc] = {"sem:hasTimeStamp": [f"{inc} | {inc}"],
-                        "sem:hasActor": [], "sem:hasPlace": []}
+        inc2lang2doc[inc]["nl"] += group_data[inc_type][inc]
+
+        if inc not in inc2str:
+            inc2str[inc] = {"sem:hasTimeStamp": [f"{inc} | {inc}"],
+                            "sem:hasActor": [], "sem:hasPlace": []}
 
         ent_inc = inc.split(",")[0]
         for item in entity_data[inc_type].get(ent_inc, []):

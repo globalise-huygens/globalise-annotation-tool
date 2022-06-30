@@ -483,6 +483,9 @@ function readSRLLayer(srl_layer, typicality) {
     // Loop over each entry in SRL layer
     for (var i in srl_layer) {
         var predicate = srl_layer[i];
+
+        if (!("status" in predicate["attr"])) continue;
+        
         var predicate_id = predicate["attr"]["id"];
         var predicate_stat = predicate["attr"]["status"];
 
