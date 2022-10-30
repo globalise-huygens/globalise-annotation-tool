@@ -95,3 +95,26 @@ textarea {
     max-height: 50vh;
     overflow-y: scroll;
 }
+
+#cor-lab-results {
+    background-color: white;
+    border: 1px solid #777;
+    position: absolute;
+    width: calc(100% - 30px);
+    padding: 3px;
+    border-radius: 2px;
+    margin-top: 2px;
+    z-index: 1;
+}
+
+.cor-lab-result:hover {
+    background-color: #bb8fce;
+}
+
+.cor-lab-result {
+    border-bottom: 1px solid black;
+}
+
+.cor-lab-result:last-child {
+    border-bottom: none;
+}

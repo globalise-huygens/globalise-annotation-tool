@@ -2,7 +2,7 @@ import json
 
 group_data, entity_data = None, None
 
-with open("structured raw/grouped_events.json", "r") as f:
+with open("structured raw/events.json", "r") as f:
     group_data = json.load(f)
 
 with open("structured raw/entities.json", "r") as f:

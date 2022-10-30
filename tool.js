@@ -485,7 +485,7 @@ function readSRLLayer(srl_layer, typicality) {
         var predicate = srl_layer[i];
 
         if (!("status" in predicate["attr"])) continue;
-        
+
         var predicate_id = predicate["attr"]["id"];
         var predicate_stat = predicate["attr"]["status"];
 
@@ -493,11 +493,7 @@ function readSRLLayer(srl_layer, typicality) {
         if (predicate_stat !== "deprecated") {
             var references = predicate["externalReferences"]["externalRef"];
             var latest_ref = getLatestExternalReference(references);
-
-            // NOTE: Probably should be moved to data repo
-            if (predicate_stat == "system") {
-                latest_ref.reftype = "isOfType";
-            }
+            latest_ref.reference = latest_ref.reference;
 
             // Loop over each term in the predicate span
             var predicate_span = predicate["span"]["target"];
@@ -1348,7 +1344,7 @@ function handleFrameAnnotation(json_data, task_data, session_id) {
             fs.writeFile(
                 suggestions_file,
                 JSON.stringify(suggestions),
-                function () {}
+                function () { }
             );
         });
     }
@@ -1436,7 +1432,7 @@ function handleStructuredDataAnnotation(incident_id, task_data) {
     }
 
     // Store inc2str
-    fs.writeFile(inc2str_file, JSON.stringify(inc2str), function () {});
+    fs.writeFile(inc2str_file, JSON.stringify(inc2str), function () { });
 }
 //#endregion
 
@@ -1672,6 +1668,11 @@ app.post("/store_annotation", isAuthenticated, function (req, res) {
                     login_time
                 );
             } else if (tid == 4) {
+                console.log(tda)
+                if (tda["sde_task_data"] != {}) {
+                    handleStructuredDataAnnotation(inc, tda["sde_task_data"]);
+                }
+
                 json_data = handleCoreferenceAnnotation(json_data, tda);
             } else {
                 // TODO: Handle invalid task
@@ -1701,7 +1702,7 @@ app.post("/store_notes", isAuthenticated, function (req, res) {
         var notes = JSON.parse(data);
         notes[doc] = text;
 
-        fs.writeFile(notes_file, JSON.stringify(notes), function () {});
+        fs.writeFile(notes_file, JSON.stringify(notes), function () { });
         res.sendStatus(200);
     });
 });
