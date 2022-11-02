@@ -81,7 +81,7 @@ const pos_info_file =
     data_dir + "/lexical_data/part_of_speech/part_of_speech_ud_info.json";
 const pos_map_file =
     data_dir + "/lexical_data/part_of_speech/ud_pos_to_fn_pos.json";
-const frame_info_file = data_dir + "/lexical_data/lexicons/frame_to_info.json";
+const frame_info_file = data_dir + "/lexical_data/lexicons/event_to_info.json";
 
 const dynamic_lexicon_file = data_dir + "/DynamicLexicon.json";
 const suggestions_file = data_dir + "/Suggestions.json";
