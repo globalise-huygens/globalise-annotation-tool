@@ -6,7 +6,7 @@ with open("lexical_data/lexicons/event_to_info.json", "r") as f:
 result = {"lexical_lookup": {}, "ordered_frames": []}
 
 for event, event_info in event_to_info.items():
-    result["ordered_frames"].append([0, f"{event.split('-')[1]} (0)", event_info["framenet_url"]])
+    result["ordered_frames"].append([0, f"{event.split('-')[1]} (0)", event])
 
 with open("lexical_data/typicality/lexical_lookup/nl/default.json", "w+") as f:
     json.dump(result, f)
